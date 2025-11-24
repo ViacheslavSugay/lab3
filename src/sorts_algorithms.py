@@ -1,5 +1,3 @@
-from auxiliary_functions import fix_heap
-
 def bubble_sort(arr: list[int]) -> list[int]:
     for i in range(len(arr) - 1):
         for j in range(len(arr) - 1 - i):
@@ -78,6 +76,19 @@ def bucket_sort(arr: list[float], buckets: int | None = None) -> list[float]:
             result.append(element)
 
     return result
+
+
+def fix_heap(arr, ln, i):
+    upper = i
+    l, r = 2 * i + 1, 2 * i + 2
+
+    if l < ln and arr[l] > arr[upper]:
+        upper = l
+    if r < ln and arr[r] > arr[upper]:
+        upper = r
+    if upper != i:
+        arr[i], arr[upper] = arr[upper], arr[i]
+        fix_heap(arr, ln, upper)
 
 
 def heap_sort(arr: list[int]) -> list[int]:

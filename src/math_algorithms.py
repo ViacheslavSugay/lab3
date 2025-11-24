@@ -12,6 +12,11 @@ def factorial_recursive(n: int) -> int:
 
 
 def fibo(n: int) -> int:
+    if n == 1:
+        return 0
+    elif n == 2:
+        return 1
+
     values = [0, 1]
     while len(values) < n:
         values.append(values[-1] + values[-2])

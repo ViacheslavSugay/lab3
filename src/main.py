@@ -23,11 +23,25 @@ def main() -> None:
           ' radix\n'
           ' bucket\n'
           ' heap\n')
+    print('Stack_method:\n'
+          'pop\n'
+          'push\n'
+          'peek\n'
+          'is_empty\n'
+          'len\n'
+          'min\n')
+    print('Queue_method:\n'
+          'enqueue\n'
+          'dequeue\n'
+          'is_empty\n'
+          'front\n'
+          'len\n')
 
     print(
         'Введите через пробел тип функций(math или sorts), название функции, для sorts введите список чисел в квадратных скобках через запятую, '
         'для math просто число\n')
 
+    print('Для структур данных введите тип структуры (stack иди queue), название метода и значание, если оно нужно для метода\n')
     signal.signal(signal.SIGINT, signal_handler)
 
     while True:

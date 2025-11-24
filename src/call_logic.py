@@ -1,15 +1,18 @@
 from math_algorithms import *
 from sorts_algorithms import *
-from tests_case_generator import *
+from data_structures import *
 
 alg = {'math': {"factorial": factorial, "factorial_recursive": factorial_recursive, "fibo": fibo,
                 "fibo_recursive": fibo_recursive},
 
        'sorts': {"bubble": bubble_sort, "quick": quick_sort, "counting": counting_sort, "radix": radix_sort,
-                 "bucket": bucket_sort, "heap": heap_sort},
+                 "bucket": bucket_sort, "heap": heap_sort}}
+s = [""]
 
-       'tests': {"rand_int": rand_int_array, "nearly": nearly_sorted, "many_duplicates": many_duplicates,
-                 "reversed": reversed_sorted}}
+structures = {
+    'stack': Stack(),
+    'queue': Queue()
+}
 
 
 def pars(n: str):
@@ -17,7 +20,7 @@ def pars(n: str):
 
     if n[0] == 'math':
         if n[1] not in alg['math']:
-            raise SyntaxError(f'{n[1]}: такой математичсекой функции нет!')
+            raise SyntaxError(f'{n[1]}: такой математической функции нет!')
         return alg[n[0]][n[1]](int(n[2]))
 
     if n[0] == 'sorts':
@@ -41,5 +44,58 @@ def pars(n: str):
             f = alg[n[0]][func_name](digit_arr)
 
         return f
+
+    if n[0] == "stack" or n[0] == "queue":
+        if len(n) < 2:
+            raise SyntaxError("Недостаточно аргументов! Формат: структура метод [значение]")
+
+        struct_type = n[0]
+        method = n[1]
+
+        if struct_type not in structures:
+            raise SyntaxError(f"{struct_type}: такой структуры нет! Доступные: stack, queue")
+
+        struct = structures[struct_type]
+
+        if method == 'push' or method == 'enqueue':
+            if len(n) < 3:
+                raise SyntaxError(f"Метод {method} требует значение!")
+            value = int(n[2])
+
+            if method == 'push':
+                struct.push(value)
+            else:
+                struct.enqueue(value)
+            f = f"Добавлено: {value}"
+
+        elif method == 'pop':
+            f = f"Извлечено: {struct.pop()}"
+
+        elif method == 'dequeue':
+            f = f"Извлечено: {struct.dequeue()}"
+
+        elif method == 'peek':
+            f = f"Верхний элемент: {struct.peek()}"
+
+        elif method == 'front':
+            f = f"Первый элемент: {struct.front()}"
+
+        elif method == 'is_empty':
+            f = f"Пустая: {struct.is_empty()}"
+
+        elif method == 'len':
+            f = f"Размер: {len(struct)}"
+
+        elif method == 'min':
+            f = f"Минимальный: {struct.min()}"
+
+        elif method == 'show':
+            f = f"Содержимое: {struct.items}"
+
+        else:
+            raise SyntaxError(f"{method}: такого метода нет!")
+
+        return f
+
     else:
-        raise SyntaxError(f'{n[0]}: такого типа функций нет!')
+        raise SyntaxError(f'{n[0]}: такого типа функций или структуры нет!')

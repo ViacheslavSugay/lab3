@@ -21,6 +21,11 @@ class Stack:
     def __len__(self) -> int:
         return len(self.items)
 
+    def min(self) ->  int:
+        if self.is_empty():
+            raise IndexError("В стэке нет элементов!")
+        m = min(self.items)
+        return m
 
 class Queue:
     def __init__(self):

@@ -1,6 +1,8 @@
 from math_algorithms import *
 from sorts_algorithms import *
 from data_structures import *
+from benchmark import *
+from arr import *
 
 alg = {'math': {"factorial": factorial, "factorial_recursive": factorial_recursive, "fibo": fibo,
                 "fibo_recursive": fibo_recursive},
@@ -96,6 +98,10 @@ def pars(n: str):
             raise SyntaxError(f"{method}: такого метода нет!")
 
         return f
+
+    if n[0] == 'benchmark':
+        results = benchmark_sorts(arrays, algos)
+        return print_results(results)
 
     else:
         raise SyntaxError(f'{n[0]}: такого типа функций или структуры нет!')

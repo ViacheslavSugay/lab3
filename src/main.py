@@ -42,6 +42,7 @@ def main() -> None:
         'для math просто число\n')
 
     print('Для структур данных введите тип структуры (stack иди queue), название метода и значание, если оно нужно для метода\n')
+    print('Для бенчмарка функция: benchmark\n')
     signal.signal(signal.SIGINT, signal_handler)
 
     while True:

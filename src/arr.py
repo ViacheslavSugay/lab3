@@ -9,9 +9,7 @@ arrays = {
     "many_duplicates_100": many_duplicates(100, 5),
     "many_duplicates_500": many_duplicates(500, 10),
     "reversed_100": reversed_sorted(100),
-    "reversed_500": reversed_sorted(500),
-    "sorted_100": list(range(100)),
-    "sorted_500": list(range(500)),
+    "reversed_500": reversed_sorted(500)
 }
 
 algos = {

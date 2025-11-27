@@ -9,7 +9,6 @@ alg = {'math': {"factorial": factorial, "factorial_recursive": factorial_recursi
 
        'sorts': {"bubble": bubble_sort, "quick": quick_sort, "counting": counting_sort, "radix": radix_sort,
                  "bucket": bucket_sort, "heap": heap_sort}}
-s = [""]
 
 structures = {
     'stack': Stack(),

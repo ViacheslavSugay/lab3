@@ -15,18 +15,19 @@
     algolab/
         ├── src/
         │   ├── __init__.py
-        │   ├── arr.py                    # тестовые массивы
-        │   ├── benchmark.py              # функции бенчмарка
-        │   ├── call_logic.py             # логика вызовов
-        │   ├── data_structures.py        # структуры данных
-        │   ├── main.py                   # главный файл
-        │   ├── math_algorithms.py        # математические алгоритмы
-        │   ├── sorts_algorithms.py       # алгоритмы сортировки
-        │   ├── tests_case_generator.py   # генератор тест-кейсов
+        │   ├── arr.py                       # тестовые массивы
+        │   ├── benchmark.py                 # функции бенчмарка
+        │   ├── call_logic.py                # логика вызовов
+        │   ├── data_structures.py           # структуры данных
+        │   ├── main.py                      # главный файл
+        │   ├── math_algorithms.py           # математические алгоритмы
+        │   ├── sorts_algorithms.py          # алгоритмы сортировки
+        │   ├── tests_case_generator.py      # генератор тест-кейсов
         │   └── tests/
         │       ├── __init__.py
-        │       ├── test_math.py          # тесты для математических алгоритмов
-        │       └── test_sorts.py         # тесты для алгоритмов сортировки
+        │       ├── test_math.py             # тесты для математических алгоритмов
+        │       ├── test_sorts.py            # тесты для алгоритмов сортировки
+        │       └── test_data_structures.py  # тесты для структур данных
         ├── .gitignore
         ├── .pre-commit-config.yaml
         ├── pyproject.toml

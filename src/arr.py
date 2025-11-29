@@ -16,5 +16,6 @@ algos = {
     "bubble_sort": bubble_sort,
     "quick_sort": quick_sort,
     "counting_sort": counting_sort,
-    "radix_sort": radix_sort
+    "radix_sort": radix_sort,
+    "heap_sort": heap_sort
 }

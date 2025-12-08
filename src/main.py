@@ -29,13 +29,15 @@ def main() -> None:
           'peek\n'
           'is_empty\n'
           'len\n'
-          'min\n')
+          'min\n'
+          'show\n')
     print('Queue_method:\n'
           'enqueue\n'
           'dequeue\n'
           'is_empty\n'
           'front\n'
-          'len\n')
+          'len\n'
+          'show\n')
 
     print(
         'Введите через пробел тип функций(math или sorts), название функции, для sorts введите список чисел в квадратных скобках через запятую, '
